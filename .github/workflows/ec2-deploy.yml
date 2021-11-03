@@ -24,6 +24,6 @@ jobs:
         with:
             key: ${{ secrets.SSH_PRIVATE_KEY }} 
       - name: Deploy with rsync
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/zellwk/zellwk.com/dist/
+        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/var/www/html/dist/
 
     
