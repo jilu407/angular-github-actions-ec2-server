@@ -19,10 +19,6 @@ jobs:
         run: npm install
       - name: Install dependencies
         run: npm run build --prod
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-            key: ${{ secrets.SSH_PRIVATE_KEY }} 
       - name: Deploy with rsync
         run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/var/www/html/dist/
 
