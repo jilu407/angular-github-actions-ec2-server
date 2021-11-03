@@ -2,7 +2,7 @@ name: Deploy to aws ec2
 on: 
   push:
     branches:
-      - 'mastrer'
+      - 'master'
 jobs:
   build:
     name: Build 
