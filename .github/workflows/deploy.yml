@@ -19,7 +19,15 @@ jobs:
         run: npm install
       - name: Install dependencies
         run: npm run build --prod
-      - name: Deploy with rsync
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/var/www/html/dist/
+      - name: ssh key passphrase
+        uses: ./
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            whoami
+            ls -al
 
     
