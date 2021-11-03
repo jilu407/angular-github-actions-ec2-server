@@ -17,10 +17,10 @@ jobs:
         
       - name: Install dependencies
         run: npm install
-      - name: Install dependencies
+      - name: Prod build-app
         run: npm run build --prod
       - name: ssh key passphrase
-        uses: ./
+        uses: actions/checkout@v2
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
