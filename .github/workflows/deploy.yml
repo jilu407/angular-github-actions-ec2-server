@@ -29,5 +29,8 @@ jobs:
           script: |
             whoami
             ls -al
+            pwd
+            touch jilani.txt
+            pwd
 
     
