@@ -26,11 +26,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          script: |
-            whoami
-            ls -al
-            pwd
-            touch jilani.txt
-            pwd
-
+          source: "dist"
+          target: "/home/ec2-user/"
+          
     
