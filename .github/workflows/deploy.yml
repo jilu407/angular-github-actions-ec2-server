@@ -12,5 +12,9 @@ jobs:
       #- name: Run a one-line script
        # run: echo Hello, world
       - name: Display the path
-        run: echo ${env:PATH}
-        shell: pwsh
+      - run: | 
+         cd C:\Users
+         ls
+         pwd
+        
+
