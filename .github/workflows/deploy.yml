@@ -1,32 +1,20 @@
-name: Deploy to aws ec2
-on: 
+name: analizer
+
+on:
   push:
-    branches:
-      - 'master'
+    branches: [master]
 jobs:
   build:
     name: Build 
-    runs-on: ubuntu-latest
+    runs-on: dev
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node 15.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '15.x'
-        
-      - name: Install dependencies
-        run: npm install
-      - name: Prod build-app
-        run: npm run build --prod
-      - name: copy file via ssh key
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.KEY }}
-          source: "dist/"
-          target: "/home/ec2-user/"
-          
-    
+      - uses: actions/checkout@v2
+      #- name: Run a one-line script
+       # run: echo Hello, world
+      - name: Perform a Pester test from the Tests.ps1 file
+        shell: pwsh
+        run: |
+          cd C:\Program Files\UiPath\Studio
+          ls
+          pwd
+
