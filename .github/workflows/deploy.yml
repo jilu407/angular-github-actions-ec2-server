@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Script
-        run: .\1.ps1
-        shell: powershell
+        run: |
+          cmd cd C:\Users\Rahul Kumar\Pictures\min-project
+          cmd ls
+          cmd pwd
+       
 
