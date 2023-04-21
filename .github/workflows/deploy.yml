@@ -12,7 +12,7 @@ jobs:
       #- name: Run a one-line script
        # run: echo Hello, world
       - name: Perform a Pester test from the Tests.ps1 file
-        shell: pwsh
+        shell: bash
         run: |
           cd C:\Program Files\UiPath\Studio
           ls
